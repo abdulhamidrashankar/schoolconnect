@@ -10,7 +10,7 @@ src/
  │    │    ├── service/          # Business logic and interfaces
  │    │    ├── model/            # Entity and DTO classes
  │    │    ├── repository/       # Spring Data JPA Repositories
- │    │    └── BackendAppApplication.java  # Main Spring Boot class
+ │    │    └── App.java          # Main Spring Boot class
  │    └── resources/
  │         ├── application.properties
  │         └── db-connetion.properties
@@ -59,7 +59,7 @@ src/
 1. Clone the repository:
 
    ```bash
-   git clone [https://github.com/yourusername/backend-app.git](https://github.com/learnjavadev/schoolconnect)
+   git clone https://github.com/learnjavadev/schoolconnect
    cd backend-app
 
 2. Configure your PostgreSQL connection in src/main/resources/db-connection.properties:
