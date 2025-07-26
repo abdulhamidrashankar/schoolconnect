@@ -1,7 +1,23 @@
 # schoolconnect
 Parent Directory for the spring-boot maven project
 
-# backend-app
+# backend-app project structure
+   ```bash
+src/
+ ├── main/
+ │    ├── java/com/schoolconnect/
+ │    │    ├── controller/       # REST Controllers and APIs
+ │    │    ├── service/          # Business logic and interfaces
+ │    │    ├── model/            # Entity and DTO classes
+ │    │    ├── repository/       # Spring Data JPA Repositories
+ │    │    └── BackendAppApplication.java  # Main Spring Boot class
+ │    └── resources/
+ │         ├── application.properties
+ │         └── db-connetion.properties
+ └── test/
+      └── java/com/schoolconnect/
+
+   ```
 
 ## Overview
 
@@ -43,5 +59,27 @@ Parent Directory for the spring-boot maven project
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/backend-app.git
+   git clone [https://github.com/yourusername/backend-app.git](https://github.com/learnjavadev/schoolconnect)
    cd backend-app
+
+2. Configure your PostgreSQL connection in src/main/resources/db-connection.properties:
+
+   ```bash
+   spring.datasource.url=jdbc:postgresql://localhost:5432/schoolconnect
+   spring.datasource.username=your_db_user
+   spring.datasource.password=your_db_password
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+
+3. Build and run the application:
+
+   ```bash
+   mvn clean package
+   mvn spring-boot:run
+
+4. Access the API documentation in your browser:
+
+   ```bash
+   http://localhost:8080/swagger-ui.html
+
+
