@@ -6,10 +6,10 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
 @Configuration
-@Profile("h2-db")
+@Profile("h2-db-file")
 @PropertySources({
-    @PropertySource("classpath:h2-db-connection.properties")
+    @PropertySource("classpath:h2-db-file-connection.properties")
 })
-public class H2dbConfig {
+public class H2dbFileConfig {
 	// Only loaded if profile is "h2"
 }
