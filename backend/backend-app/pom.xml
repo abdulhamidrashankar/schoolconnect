@@ -42,7 +42,6 @@
 			<version>2.1.0</version>
 		</dependency>
 
-
 		<!-- JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -53,6 +52,12 @@
 			<artifactId>postgresql</artifactId>
 		</dependency>
 
+		<!-- h2 db -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<!-- JUnit for testing -->
 		<dependency>

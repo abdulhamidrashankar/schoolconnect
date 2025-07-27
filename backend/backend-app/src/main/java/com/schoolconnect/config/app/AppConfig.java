@@ -1,4 +1,4 @@
-package com.schoolconnect.app.config;
+package com.schoolconnect.config.app;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -7,7 +7,6 @@ import org.springframework.context.annotation.PropertySources;
 @Configuration
 @PropertySources({
     @PropertySource("classpath:application.properties"),
-    @PropertySource("classpath:db-connection.properties")
 })
 public class AppConfig {
 }
