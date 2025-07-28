@@ -60,22 +60,28 @@ src/
 
    ```bash
    git clone https://github.com/learnjavadev/schoolconnect
-   cd backend-app
+   cd schoolconnect/backend-app
 
-2. Configure your PostgreSQL connection in src/main/resources/db-connection.properties:
-
+2. If you want to use PostgreSQL on your machine:
+   Update the connection parameters in src/main/resources/db-connection.properties:
+   (This is also the default behaviour of the backend application)
+   
+   Replace <db-name> with your actual PGSQL database name
+   Replace <username> with your database username
+   Replace <password> with your database password 
    ```bash
-   spring.datasource.url=jdbc:postgresql://localhost:5432/schoolconnect
-   spring.datasource.username=your_db_user
-   spring.datasource.password=your_db_password
-   spring.jpa.hibernate.ddl-auto=update
-   spring.jpa.show-sql=true
+   spring.datasource.url=jdbc:postgresql://localhost:5432/<db-name>
+   spring.datasource.username=<username>
+   spring.datasource.password=<password>
+   
 
 3. Build and run the application:
 
    ```bash
    mvn clean package
-   mvn spring-boot:run
+   cd/target
+   java -jar backend-app-1.0-SNAPSHOT.jar
+
 
 4. Access the API documentation in your browser:
 
