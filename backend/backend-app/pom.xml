@@ -59,6 +59,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- spring-security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>4.0.0-M1</version>
+		</dependency>
+
 
 		<!-- JUnit for testing -->
 		<dependency>
@@ -72,6 +79,13 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.38</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
 
 	</dependencies>
 
