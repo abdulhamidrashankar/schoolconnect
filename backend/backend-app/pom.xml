@@ -59,6 +59,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
+
 		<!-- JUnit for testing -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -66,6 +67,11 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.38</version>
+		</dependency>
 
 	</dependencies>
 

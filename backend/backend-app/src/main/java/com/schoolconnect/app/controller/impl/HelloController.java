@@ -1,4 +1,4 @@
-package com.schoolconnect.controller.impl;
+package com.schoolconnect.app.controller.impl;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

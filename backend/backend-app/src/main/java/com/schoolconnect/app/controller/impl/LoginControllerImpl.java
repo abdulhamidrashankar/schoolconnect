@@ -1,10 +1,10 @@
-package com.schoolconnect.controller.impl;
+package com.schoolconnect.app.controller.impl;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.schoolconnect.controller.LoginControllerAPI;
+import com.schoolconnect.app.controller.LoginControllerAPI;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 

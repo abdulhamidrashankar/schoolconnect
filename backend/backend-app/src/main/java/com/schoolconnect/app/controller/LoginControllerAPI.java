@@ -1,4 +1,4 @@
-package com.schoolconnect.controller;
+package com.schoolconnect.app.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
