@@ -18,9 +18,10 @@ public class HelloController {
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Successfully returned greeting")
     })
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, Welcome to School Connect App!";
+    @GetMapping("/health")
+    public String checkApplicationHealth() {
+        return "Hello, Welcome to School Connect App!"
+        		+ "\nThe back end application is running";
     }
 }
 

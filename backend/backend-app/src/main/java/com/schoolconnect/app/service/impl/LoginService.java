@@ -1,4 +1,4 @@
-package com.schoolconnect.app.controller.impl;
+package com.schoolconnect.app.service.impl;
 
 import java.time.LocalDateTime;
 

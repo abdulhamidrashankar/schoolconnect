@@ -18,6 +18,10 @@ public class CustomUserDetailsService implements UserDetailsService {
 	@Autowired
 	UserService userService;
 
+	public CustomUserDetailsService() {
+		
+	}
+
 	public CustomUserDetailsService(UserService userService) {
 		this.userService = userService;
 	}
