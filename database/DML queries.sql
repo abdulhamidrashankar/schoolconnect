@@ -82,3 +82,31 @@ VALUES
 ('Sophia', 'Brown', 'Female', 'sophia@school.edu', '777-888-9999'),
 ('James', 'Anderson', 'Male', 'james@school.edu', '222-333-4444');
 
+
+CREATE TABLE guardian_type(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+INSERT INTO guardian_type (name)
+VALUES
+('Father'), ('Mother'), ('Grand Father'), ('Grand Mother'), ('Uncle'),('Aunt');
+
+CREATE TABLE guardian (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    surname VARCHAR(100) NOT NULL,
+    gender VARCHAR(10),
+    email_address VARCHAR(255),
+    phone_number VARCHAR(20),
+    address VARCHAR(500),
+    occupation VARCHAR(100),
+    student_id INTEGER REFERENCES student(id),
+	guardian_type_id INTEGER REFERENCES guardian_type(id)
+);
+
+INSERT INTO guardian (name, surname, gender, email_address,phone_number, guardian_type_id, address, occupation, student_id
+)
+VALUES
+('Mary', 'Johnson', 'Female', 'mary.johnson@example.com', '+11234567890', 2, '123 Maple Street, Springfield, IL', 'Nurse', 1),
+('James', 'Johnson', 'Male', 'james.johnson@example.com', '+19876543210', 1, '123 Maple Street, Springfield, IL', 'Engineer', 1);
+
