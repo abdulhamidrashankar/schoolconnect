@@ -100,13 +100,14 @@ CREATE TABLE guardian (
     phone_number VARCHAR(20),
     address VARCHAR(500),
     occupation VARCHAR(100),
+	preference VARCHAR(10) CHECK (preference IN ('primary', 'secondry')),
     student_id INTEGER REFERENCES student(id),
 	guardian_type_id INTEGER REFERENCES guardian_type(id)
 );
 
-INSERT INTO guardian (name, surname, gender, email_address,phone_number, guardian_type_id, address, occupation, student_id
+INSERT INTO guardian (name, surname, gender, email_address,phone_number, preference, guardian_type_id, address, occupation, student_id
 )
 VALUES
-('Mary', 'Johnson', 'Female', 'mary.johnson@example.com', '+11234567890', 2, '123 Maple Street, Springfield, IL', 'Nurse', 1),
-('James', 'Johnson', 'Male', 'james.johnson@example.com', '+19876543210', 1, '123 Maple Street, Springfield, IL', 'Engineer', 1);
+('Mary', 'Johnson', 'Female', 'mary.johnson@example.com', '+11234567890', 'primary' ,2, '123 Maple Street, Springfield, IL', 'Nurse', 1),
+('James', 'Johnson', 'Male', 'james.johnson@example.com', '+19876543210', 'secondry',1, '123 Maple Street, Springfield, IL', 'Engineer', 1);
 
