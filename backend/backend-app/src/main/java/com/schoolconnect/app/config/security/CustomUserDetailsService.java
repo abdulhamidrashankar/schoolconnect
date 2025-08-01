@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import com.schoolconnect.app.entity.User;
 import com.schoolconnect.app.service.UserService;
 
-import lombok.RequiredArgsConstructor;
-
 @Service
-@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
 	@Autowired
