@@ -18,14 +18,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 	@Autowired
 	UserService userService;
 
-	public CustomUserDetailsService() {
-		
-	}
-
-	public CustomUserDetailsService(UserService userService) {
-		this.userService = userService;
-	}
-
 	/**
 	 * Load user from DB and convert to Spring Security's UserDetails
 	 */
