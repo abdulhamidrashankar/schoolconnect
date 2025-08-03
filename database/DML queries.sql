@@ -20,8 +20,8 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (username, password, salt, last_login, isblocked, role_id)
-VALUES ('emma_stone', 'hashed_pw', 'salt123', NOW(), 1, 3 ),
-('john_wick', 'hashed_pw', 'salt123', NOW(), 1, 2 );
+VALUES ('emma_stone', 'hashed_pw', 'salt123', NOW(), TRUE, 3 ),
+('john_wick', 'hashed_pw', 'salt123', NOW(), TRUE, 2 );
 
 
 CREATE TABLE superadmin (
