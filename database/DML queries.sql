@@ -15,7 +15,7 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     salt VARCHAR(255),
     last_login TIMESTAMP,
-    isblocked INTEGER DEFAULT 0,
+    isblocked BOOLEAN DEFAULT FALSE,
     role_id INTEGER NOT NULL REFERENCES role(id)
 );
 
@@ -50,6 +50,25 @@ VALUES
 ('David Kim', '444-555-6666', 'david@school.edu');
 
 
+CREATE TABLE guardian (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    surname VARCHAR(100) NOT NULL,
+    gender VARCHAR(10),
+    email_address VARCHAR(255),
+    phone_number VARCHAR(20),
+    address VARCHAR(500),
+    occupation VARCHAR(100),
+	guardian_type VARCHAR(50),
+	preference VARCHAR(10) CHECK (preference IN ('Primary', 'Secondary')),
+    user_id INTEGER REFERENCES users(id)
+);
+
+INSERT INTO guardian (name, surname, gender, email_address,phone_number, preference, guardian_type, address, occupation )
+VALUES
+('Mary', 'Johnson', 'Female', 'mary.johnson@example.com', '+11234567890', 'Primary' ,'Mother', '123 Maple Street, Springfield, IL', 'Nurse'),
+('James', 'Johnson', 'Male', 'james.johnson@example.com', '+19876543210', 'Secondary' ,'Father', '123 Maple Street, Springfield, IL', 'Engineer');
+
 CREATE TABLE student (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
@@ -60,7 +79,7 @@ CREATE TABLE student (
     gender VARCHAR(10) CHECK (gender IN ('Male', 'Female', 'Other')),
 	enrollment_number VARCHAR(50),
     enrollment_date DATE DEFAULT CURRENT_DATE,
-	user_id INTEGER REFERENCES users(id)
+	guardian_id INTEGER REFERENCES guardian(id)
 );
 INSERT INTO student (first_name, middle_name, last_name, date_of_birth, gender, enrollment_number, enrollment_date)
 VALUES
@@ -82,32 +101,4 @@ VALUES
 ('Sophia', 'Brown', 'Female', 'sophia@school.edu', '777-888-9999'),
 ('James', 'Anderson', 'Male', 'james@school.edu', '222-333-4444');
 
-
-CREATE TABLE guardian_type(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
-);
-INSERT INTO guardian_type (name)
-VALUES
-('Father'), ('Mother'), ('Grand Father'), ('Grand Mother'), ('Uncle'),('Aunt');
-
-CREATE TABLE guardian (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    surname VARCHAR(100) NOT NULL,
-    gender VARCHAR(10),
-    email_address VARCHAR(255),
-    phone_number VARCHAR(20),
-    address VARCHAR(500),
-    occupation VARCHAR(100),
-	preference VARCHAR(10) CHECK (preference IN ('primary', 'secondry')),
-    student_id INTEGER REFERENCES student(id),
-	guardian_type_id INTEGER REFERENCES guardian_type(id)
-);
-
-INSERT INTO guardian (name, surname, gender, email_address,phone_number, preference, guardian_type_id, address, occupation, student_id
-)
-VALUES
-('Mary', 'Johnson', 'Female', 'mary.johnson@example.com', '+11234567890', 'primary' ,2, '123 Maple Street, Springfield, IL', 'Nurse', 1),
-('James', 'Johnson', 'Male', 'james.johnson@example.com', '+19876543210', 'secondry',1, '123 Maple Street, Springfield, IL', 'Engineer', 1);
 
