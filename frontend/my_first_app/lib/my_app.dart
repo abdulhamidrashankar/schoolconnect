@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'LoginScreen.dart';
-import 'responsive.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+import 'login_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'ClassBridge Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const BasicAppbarExample(),
+      home: BasicAppbarExample(),
     );
   }
 }
@@ -109,74 +104,60 @@ class _BasicAppbarExampleState extends State<BasicAppbarExample> {
 
       // BODY WITH CARD
       body: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      _var,
-                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
-                    ),
-                    const SizedBox(height: 15),
-
-              
-                    Center(
-                      child: Card(
-                        color: const Color.fromARGB(255, 58, 134, 169),
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Text(
-                                'Today\'s Classes',
-                                style: TextStyle(
-                                  fontSize: 18, 
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              Text('1. Mathematics - 10:00 AM', style: TextStyle(color: Colors.white)),
-                              Text('2. Science - 11:30 AM', style: TextStyle(color: Colors.white)),
-                              Text('3. History - 2:00 PM', style: TextStyle(color: Colors.white)),
-                              Text('Lunch Break - 3:00 PM', style: TextStyle(color: Color.fromARGB(255, 14, 13, 13))),
-                            ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                _var,
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+              ),
+              const SizedBox(height: 15),
+              Center(
+                child: Card(
+                  color: const Color.fromARGB(255, 58, 134, 169),
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Today\'s Classes',
+                          style: TextStyle(
+                            fontSize: 18, 
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
-                      ),
+                        SizedBox(height: 10),
+                        Text('1. Mathematics - 10:00 AM', style: TextStyle(color: Colors.white)),
+                        Text('2. Science - 11:30 AM', style: TextStyle(color: Colors.white)),
+                        Text('3. History - 2:00 PM', style: TextStyle(color: Colors.white)),
+                        Text('Lunch Break - 3:00 PM', style: TextStyle(color: Color.fromARGB(255, 14, 13, 13))),
+                      ],
                     ),
-
-                    const SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const LoginScreen()),
-                          );
-                        },
-                        child: const Text('Login Screen'),
-                      ),
-                      const SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const LoginScreenR()),
-                          );
-                        },
-                        child: const Text('Login ScreenR'),
-                      ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                },
+                child: const Text('Login Page'),
+              ),
+            ],
+          ),
+        ),
+      ),
 
       bottomNavigationBar: SafeArea(
         child: Container(
