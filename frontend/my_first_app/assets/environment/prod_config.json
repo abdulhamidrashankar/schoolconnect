@@ -1,0 +1,9 @@
+{
+  "apiUrl": "https://dev-api.example.com",
+  "httpScheme": "http",
+  "httpsScheme": "https",
+  "backendHost": "localhost",
+  "backendPort": 8080,
+  "apiBasePath": "/schoolconnect",
+  "loginPath": "/login"
+}
