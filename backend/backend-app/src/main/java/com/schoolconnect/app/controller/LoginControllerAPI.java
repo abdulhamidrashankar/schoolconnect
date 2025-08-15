@@ -32,4 +32,5 @@ public interface LoginControllerAPI {
 
 	@GetMapping("/session-info")
 	public ResponseEntity<?> getSessionFromContext(HttpSession session);
+
 }
