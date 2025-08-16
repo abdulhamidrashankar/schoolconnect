@@ -32,7 +32,7 @@ public class User {
     private LocalDateTime lastLogin;
 
     @Column(name = "isblocked", columnDefinition = "INTEGER DEFAULT 0")
-    private Integer isblocked;
+    private boolean isblocked;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id", nullable = false)
@@ -78,11 +78,11 @@ public class User {
 		this.lastLogin = lastLogin;
 	}
 
-	public Integer getIsblocked() {
+	public boolean getIsblocked() {
 		return isblocked;
 	}
 
-	public void setIsblocked(Integer isblocked) {
+	public void setIsblocked(boolean isblocked) {
 		this.isblocked = isblocked;
 	}
 

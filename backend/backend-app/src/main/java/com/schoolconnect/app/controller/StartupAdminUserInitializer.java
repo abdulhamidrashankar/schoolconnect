@@ -34,7 +34,7 @@ public class StartupAdminUserInitializer {
 				admin.setUsername("root");
 				admin.setPassword(passwordEncoder.encode("root123")); // encrypted password
 				admin.setRole(adminRole);
-				admin.setIsblocked(0);
+				admin.setIsblocked(false);
 				userRepository.save(admin);
 
 				System.out.println("✅ Admin user created: root / root123");
