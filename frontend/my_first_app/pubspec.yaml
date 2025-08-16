@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   fluttertoast: ^8.2.4
-
   cupertino_icons: ^1.0.8
+  http: ^1.2.0
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +39,8 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/environment/dev_config.json
+    - assets/environment/prod_config.json
     - assets/images/login_s.png
     - assets/images/school.png
     - assets/images/ClassBridge_splash_screen.png

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-
-void main() {
-  runApp(const SchoolApp());
-}
+import 'package:my_first_app/constants/global_app_strings.dart';
+import 'login_button.dart'; 
 
 class SchoolApp extends StatelessWidget {
   const SchoolApp({super.key});
@@ -12,19 +9,19 @@ class SchoolApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginScreenR(),
+      home: LoginPage(),
     );
   }
 }
 
-class LoginScreenR extends StatefulWidget {
-  const LoginScreenR({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LoginScreenR> createState() => _LoginScreenState();
+  State<LoginPage> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreenR> {
+class _LoginScreenState extends State<LoginPage> {
   bool _obscureText = true;
   final TextEditingController _emailTxt = TextEditingController();
   final TextEditingController _passwordTxt = TextEditingController();
@@ -40,7 +37,7 @@ class _LoginScreenState extends State<LoginScreenR> {
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
               child: Center(
-                child: Container(
+                child: SizedBox(
                   width: formWidth,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,7 +53,7 @@ class _LoginScreenState extends State<LoginScreenR> {
                         style: TextStyle(fontSize: 22, color: Colors.black54),
                       ),
                       const Text(
-                        'ClassBridge',
+                        GlobalAppStrings.schoolName,
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
@@ -115,46 +112,13 @@ class _LoginScreenState extends State<LoginScreenR> {
                       const SizedBox(height: 10),
 
                       // Login button
-                      SizedBox(
-                        width: double.infinity,
-                        height: 48,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            String email = _emailTxt.text.trim();
-                            String password = _passwordTxt.text.trim();
-                            if (email.isNotEmpty && password.isNotEmpty) {
-                              Fluttertoast.showToast(
-                                msg: "Login Successful!",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                backgroundColor: Colors.green,
-                                textColor: Colors.white,
-                                fontSize: 16.0,
-                              );
-                            } else {
-                              Fluttertoast.showToast(
-                                msg: "Please enter required fields!",
-                                toastLength: Toast.LENGTH_SHORT,
-                                gravity: ToastGravity.CENTER,
-                                backgroundColor: Colors.red,
-                                textColor: Colors.white,
-                              );
-                            }
+                     LoginButton(
+                          emailController: _emailTxt,
+                          passwordController: _passwordTxt,
+                          onSuccess: () {
+                            // Optional: handle navigation or other actions on success
                           },
-                          style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            backgroundColor: Colors.blue,
-                            foregroundColor: Colors.white,
-                          ),
-                          child: const Text(
-                            'Log in',
-                            style: TextStyle(fontSize: 16),
-                          ),
                         ),
-                      ),
-                      const SizedBox(height: 24),
 
                       // Signup row
                       Row(
