@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
-import 'LoginScreen.dart';
+import 'package:my_first_app/notification_ex.dart';
 import 'responsive.dart';
+import 'login_page.dart';
+import 'utilities/toats_utils.dart';
+import 'notification_ex.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // ✅ Notification plugin initialize
+  await NotificationUtils.init();
   runApp(const MyApp());
 }
 
@@ -60,9 +66,14 @@ class _BasicAppbarExampleState extends State<BasicAppbarExample> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.notifications, color: Colors.white),
-            onPressed: () {
-              _updateText("Notifications");
-            },
+            onPressed: () async {
+                await NotificationUtils.requestPermission();
+                await NotificationUtils.show(
+                title: "New Alert",
+                 body: "This is a notification from the AppBar icon!",
+                 );
+                _updateText("Notifications");
+            }
           ),
           PopupMenuButton<String>(
             icon: const Icon(Icons.more_vert, color: Colors.white),
@@ -157,11 +168,22 @@ class _BasicAppbarExampleState extends State<BasicAppbarExample> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const LoginScreen()),
+                            MaterialPageRoute(builder: (context) => const LoginPage()),
                           );
                         },
                         child: const Text('Login Screen'),
                       ),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => NotificationScreen()),
+                          );
+                        },
+                        child: const Text('Notification Screen'),
+                      ),
+
                       const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
