@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login/login_button.dart'; 
+import 'package:my_first_app/constants/global_app_strings.dart';
+import 'login_button.dart'; 
 
 class SchoolApp extends StatelessWidget {
   const SchoolApp({super.key});
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginPage> {
                         style: TextStyle(fontSize: 22, color: Colors.black54),
                       ),
                       const Text(
-                        'ClassBridge',
+                        GlobalAppStrings.schoolName,
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_first_app/dashboard/user_dashboard.dart';
 import 'package:my_first_app/utilities/toats_utils.dart';
 import 'dart:convert';
 import 'package:my_first_app/utilities/url_utils.dart' show UrlUtils;
-import '../constants/login_strings.dart';
+import 'login_strings.dart';
 
 class LoginButton extends StatelessWidget {
   final TextEditingController emailController;
@@ -32,17 +33,25 @@ class LoginButton extends StatelessWidget {
       final response = await http.post(
         Uri.parse(loginUrl),
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'email': email, 'password': password}),
+        body: jsonEncode({'username': email, 'password': password}),
       );
 
       if (response.statusCode == 200) {
         ToastUtils.show(AppStrings.loginSuccess, bgColor: Colors.green);
-        if (onSuccess != null) onSuccess!();
-      } else {
-        ToastUtils.show(
-          'Login failed: ${response.reasonPhrase}',
-          bgColor: Colors.red,
+          // Navigate to HomePage
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const UserDashboard()),
         );
+
+        // Optional callback
+        if (onSuccess != null) onSuccess!();
+
+      } else {
+        final responseBody = jsonDecode(response.body);
+        final errorMessage = responseBody['message'] ?? 'Unknown error';
+
+        ToastUtils.show('Login failed: $errorMessage', bgColor: Colors.red);
       }
     } catch (e) {
       ToastUtils.show('Error: $e', bgColor: Colors.red);
