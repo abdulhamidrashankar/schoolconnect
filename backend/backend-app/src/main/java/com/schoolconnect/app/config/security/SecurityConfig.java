@@ -73,7 +73,7 @@ public class SecurityConfig {
 
 		http.exceptionHandling(ex -> ex.authenticationEntryPoint(customAuthenticationEntryPoint))
 				.csrf(csrf -> csrf.disable())
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/schoolconnect/auth/login", "/swagger-ui/**",
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/schoolconnect/login", "/swagger-ui/**",
 						"/v3/api-docs/**", "/swagger-ui.html").permitAll().anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
 				.authenticationProvider(authenticationProvider()).anonymous(anonymous -> anonymous.disable())

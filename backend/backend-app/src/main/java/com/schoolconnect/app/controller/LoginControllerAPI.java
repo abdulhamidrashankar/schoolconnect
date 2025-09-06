@@ -17,8 +17,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
-@Tag(name = "Login", description = "Authentication API for login")
-@RequestMapping("/schoolconnect/auth")
+@Tag(name = "Login", description = "Authentication API")
+@RequestMapping("/schoolconnect/")
 public interface LoginControllerAPI {
 
 	@Operation(summary = "User Login", description = "Authenticate user by username and password and return a login response (e.g. token)", requestBody = @RequestBody(content = @Content(mediaType = "application/json", schema = @Schema(implementation = LoginRequest.class))), responses = {
@@ -26,7 +26,7 @@ public interface LoginControllerAPI {
 			@ApiResponse(responseCode = "401", description = "Unauthorized - Invalid username or password"),
 			@ApiResponse(responseCode = "403", description = "Forbidden - User is blocked"),
 			@ApiResponse(responseCode = "404", description = "User not found") })
-			@ApiResponse(responseCode = "500", description = "Internal server error") })
+	@ApiResponse(responseCode = "500", description = "Internal server error")
 	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest, HttpServletRequest request);
 

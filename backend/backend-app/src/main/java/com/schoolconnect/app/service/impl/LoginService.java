@@ -30,7 +30,7 @@ public class LoginService {
     	            .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         // Check if user is blocked
-        if (user.getIsblocked() != null && user.getIsblocked() == 1) {
+        if (user.getIsblocked()) {
             return new LoginResponse("User is blocked", null);
         }
 

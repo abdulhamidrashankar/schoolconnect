@@ -18,13 +18,13 @@ public class Teacher {
 	private String surname;
 	private String gender;
 	private String email_address;
-	private String phone;
+	private String phone_number;
 	private Integer user_id;
 
 	@Override
 	public String toString() {
 		return "Teacher [id=" + id + ", name=" + name + ", surname=" + surname + ", gender=" + gender
-				+ ", email_address=" + email_address + ", phone=" + phone + ", user_id=" + user_id + "]";
+				+ ", email_address=" + email_address + ", phone=" + phone_number + ", user_id=" + user_id + "]";
 	}
 
 	public Long getId() {
@@ -67,12 +67,12 @@ public class Teacher {
 		this.email_address = email_address;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getPhoneNumber() {
+		return phone_number;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPhoneNumber(String phone) {
+		this.phone_number = phone;
 	}
 
 	public Integer getUser_id() {
