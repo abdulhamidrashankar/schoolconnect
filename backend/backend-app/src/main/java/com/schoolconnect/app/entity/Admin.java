@@ -1,7 +1,5 @@
 package com.schoolconnect.app.entity;
 
-import org.springframework.lang.Nullable;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +17,7 @@ public class Admin {
 	private String name;
 	private String email_address;
 	private String phone_number;
-	private Integer user_id;
+	private Long user_id;
 
 	@Override
 	public String toString() {
@@ -59,11 +57,11 @@ public class Admin {
 		this.phone_number = phone_number;
 	}
 
-	public Integer getUser_id() {
+	public Long	 getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(Integer user_id) {
+	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
 	
