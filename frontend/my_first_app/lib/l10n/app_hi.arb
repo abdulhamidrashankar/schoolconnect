@@ -1,0 +1,20 @@
+{
+  "@@locale": "hi",
+  "welcome": "स्वागत है",
+  "select_language": "अपनी भाषा चुनें",
+  "english": "अंग्रेज़ी",
+  "hindi": "हिंदी",
+  "marathi": "मराठी",
+  "arabic": "अरबी",
+
+  "welcome_to": "स्वागत है आपका",
+  "school_name": "क्लासब्रिज में",
+  "email_placeholder": "ईमेल पता",
+  "password_placeholder": "पासवर्ड",
+  "forgot_password": "पासवर्ड भूल गए?",
+  "login_button": "लॉग इन करें",
+  "no_account_text": "खाता नहीं है?",
+  "sign_up": "साइन अप",
+  "copyright": "कॉपीराइट © 2025 क्लासब्रिज - टेकहाइव टीम द्वारा संचालित",
+    "continue_button": "जारी रखें"
+}

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/config/config_service.dart';
-import '../my_app.dart';
+import 'package:my_first_app/core/config/config_service.dart';
+import '../core/app.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 
@@ -14,5 +14,5 @@ void main() async {
   ConfigService().setConfig(jsonDecode(jsonString));
 
   // Run the app with the loaded configuration
-  runApp(MyApp());
+  runApp(App());
 }

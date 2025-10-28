@@ -1,0 +1,20 @@
+{
+  "@@locale": "ar",
+  "welcome": "مرحبا",
+  "select_language": "اختر لغتك",
+  "english": "الإنجليزية",
+  "hindi": "الهندية",
+  "marathi": "الماراثية",
+  "arabic": "العربية",
+
+  "welcome_to": "مرحباً بك في",
+  "school_name": "ClassBridge",
+  "email_placeholder": "عنوان البريد الإلكتروني",
+  "password_placeholder": "كلمة المرور",
+  "forgot_password": "هل نسيت كلمة المرور؟",
+  "login_button": "تسجيل الدخول",
+  "no_account_text": "ليس لديك حساب؟",
+  "sign_up": "سجل",
+  "copyright": "حقوق الطبع © 2025 ClassBridge - من قبل فريق TechHive",
+   "continue_button": "استمر"
+}

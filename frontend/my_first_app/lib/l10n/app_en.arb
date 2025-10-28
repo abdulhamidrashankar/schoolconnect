@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "welcome": "Welcome",
+  "select_language": "Select Your Language",
+  "english": "English",
+  "hindi": "Hindi",
+  "marathi": "Marathi",
+  "arabic": "Arabic",
+
+  "welcome_to": "Welcome to",
+  "school_name": "ClassBridge",
+  "email_placeholder": "Email Address",
+  "password_placeholder": "Password",
+  "forgot_password": "Forgot password?",
+  "login_button": "Log in",
+  "no_account_text": "Don't have an account?",
+  "sign_up": "Sign up",
+  "copyright": "Copyright © 2025 ClassBridge - Powered By TechHive Team",
+  "continue_button": "Continue"
+}
+

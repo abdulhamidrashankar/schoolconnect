@@ -1,0 +1,22 @@
+{
+  "@@locale": "mr",
+  "welcome": "आपले स्वागत आहे",
+  "select_language": "भाषा निवडा",
+  "english": "इंग्रजी",
+  "hindi": "हिंदी",
+  "marathi": "मराठी",
+  "arabic": "अरबी",
+
+
+  "welcome_to": "स्वागत आहे",
+  "school_name": "क्लासब्रिज मध्ये",
+  "email_placeholder": "ईमेल पत्ता",
+  "password_placeholder": "पासवर्ड",
+  "forgot_password": "पासवर्ड विसरलात?",
+  "login_button": "लॉग इन",
+  "no_account_text": "खाते नाही?",
+  "sign_up": "साइन अप",
+  "copyright": "कॉपीराइट © 2025 ClassBridge - टेकहाइव टीम द्वारे चालवले",
+
+   "continue_button": "सुरू करा"
+}
