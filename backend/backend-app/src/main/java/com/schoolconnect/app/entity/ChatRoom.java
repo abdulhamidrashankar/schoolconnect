@@ -10,7 +10,7 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "chat_rooms")
+@Table(name = "chat_rooms") 
 public class ChatRoom {
     
     @Id

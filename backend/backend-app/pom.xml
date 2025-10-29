@@ -37,11 +37,6 @@
 		</dependency>
 
 		<!-- Swagger API -->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.1.0</version>
-		</dependency>
 
 		<!-- JPA -->
 		<dependency>
@@ -64,16 +59,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			<version>4.0.0-M1</version>
 		</dependency>
 
 
-		<!-- JUnit for testing -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
+		<!-- JUnit for testing - handled by spring-boot-starter-test -->
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>

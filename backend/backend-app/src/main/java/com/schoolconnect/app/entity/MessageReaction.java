@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-
+    
 @Entity
 @Table(name = "message_reactions", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"message_id", "user_id", "reaction"})

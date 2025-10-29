@@ -12,7 +12,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * spring-boot main app class
  *
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+    org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,
+    org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration.class
+})
 @EnableConfigurationProperties
 @ComponentScan (basePackages = "com.schoolconnect")
 @EnableJpaRepositories(basePackages = "com.schoolconnect.app.repository")

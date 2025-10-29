@@ -15,9 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
 import com.schoolconnect.app.controller.SecurityProperties;
-
 import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration
@@ -66,6 +64,11 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
+		// Temporarily disable security for testing
+//		http.authorizeHttpRequests(auth -> auth.anyRequest().permitAll()).csrf(AbstractHttpConfigurer::disable);
+//		return http.build();
+		
+		// Original security configuration - commented out for testing
 		if (!securityProperties.isEnabled()) {
 			http.authorizeHttpRequests(auth -> auth.anyRequest().permitAll()).csrf(AbstractHttpConfigurer::disable);
 			return http.build();
@@ -74,7 +77,7 @@ public class SecurityConfig {
 		http.exceptionHandling(ex -> ex.authenticationEntryPoint(customAuthenticationEntryPoint))
 				.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(auth -> auth.requestMatchers("/schoolconnect/login", "/swagger-ui/**",
-						"/v3/api-docs/**", "/swagger-ui.html").permitAll().anyRequest().authenticated())
+						"/v3/api-docs/**", "/swagger-ui.html", "/websocket-test.html", "/chat-test.html", "/chat-test-comprehensive.html", "/static/**", "/css/**", "/js/**", "/images/**", "/ws/**", "/app/**", "/topic/**", "/queue/**", "/api/chat/**", "/api/test/**").permitAll().anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
 				.authenticationProvider(authenticationProvider()).anonymous(anonymous -> anonymous.disable())
 				.formLogin(AbstractHttpConfigurer::disable).httpBasic(AbstractHttpConfigurer::disable)
@@ -89,5 +92,6 @@ public class SecurityConfig {
 						}).permitAll());
 
 		return http.build();
+		
 	}
 }
